@@ -487,7 +487,7 @@
                         <span class="deductive-modal__info-icon">⏱</span>
                         <div>
                             <p class="deductive-modal__label">Time Duration</p>
-                            <p class="deductive-modal__value">30 seconds per level</p>
+                            <p class="deductive-modal__value">4 Minutes</p>
                         </div>
                     </div>
 
@@ -611,11 +611,12 @@
                                 </button>
                             </div>
 
-                            <div class="inductive-tipbox">
-                                <div class="inductive-tipbox__label">Tip</div>
-                                <p>Look for shape movement, position changes, row and column patterns, and shape replacement rules. Find the relationship first, then choose matching grids.</p>
-                            </div>
                         </article>
+                    </div>
+
+                    <div class="inductive-tipbox">
+                        <div class="inductive-tipbox__label">Tip</div>
+                        <p>Look for shape movement, position changes, row and column patterns, and shape replacement rules. Find the relationship first, then choose matching grids.</p>
                     </div>
                 </section>
             </div>
@@ -809,6 +810,109 @@
                 </div>
                 <div class="actions-center">
                     <button id="gridStart" type="button" class="deductive-modal__primary cta-button">▶ Play</button>
+                </div>
+                <div class="actions-right"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Motion Challenge fullscreen modal -->
+    <div id="motionModal" class="deductive-modal" hidden aria-hidden="true">
+        <div class="deductive-modal__backdrop" data-close="true"></div>
+        <div class="deductive-modal__panel" role="dialog" aria-modal="true" aria-labelledby="motionModalTitle" aria-describedby="motionModalDesc">
+            <button class="deductive-modal__close" type="button" aria-label="Close Motion Challenge modal" data-close="true">×</button>
+
+            <div class="deductive-modal__header">
+                <h2 id="motionModalTitle">MOTION CHALLENGE</h2>
+                <div class="deductive-modal__badge">Imagination,Decision making,Time Management</div>
+                <p id="motionModalDesc" class="deductive-modal__description">In this challenge, you are given a puzzle grid containing coloured blocks, empty spaces, a red ball and a black hole. Your goal is to create a path and move the red ball into the black hole. Move blocks carefully because each movement counts as one step. Complete the puzzle within the given moves and time limit.</p>
+            </div>
+
+            <div class="deductive-modal__layout">
+                <section class="deductive-modal__rules-card" aria-label="How to play">
+                    <h3>🎮 How to Play</h3>
+
+                    <div class="deductive-modal__info-row">
+                        <span class="deductive-modal__info-icon">⏱</span>
+                        <div>
+                            <p class="deductive-modal__label">Time Duration</p>
+                            <p class="deductive-modal__value">4 Minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="deductive-modal__group">
+                        <h4>Rules</h4>
+                        <ul>
+                            <li>Every move counts as one step</li>
+                            <li>Move the red ball into the black hole</li>
+                            <li>Slide coloured blocks to create path</li>
+                            <li>Cross marked blocks cannot move</li>
+                        </ul>
+                    </div>
+
+                    <div class="deductive-modal__group">
+                        <h4>Scoring</h4>
+                        <ul>
+                            <li><strong>+3 points</strong> for every correct attempt</li>
+                            <li><strong>-1 point</strong> for every incorrect attempt</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="deductive-modal__examples-card" aria-label="Example task">
+                    <h3>▦ Example Task</h3>
+
+                    <div class="motion-example-wrap">
+                        <div class="motion-grid motion-grid--screenshot" aria-hidden="true">
+                            <span class="motion-board-cell"></span>
+                            <span class="motion-board-cell motion-board-cell--cross"></span>
+                            <span class="motion-board-cell motion-board-cell--cross"></span>
+                            <span class="motion-board-cell"></span>
+
+                            <span class="motion-board-cell"></span>
+                            <span class="motion-board-cell"></span>
+                            <span class="motion-board-cell"></span>
+                            <span class="motion-board-cell"></span>
+
+                            <span class="motion-board-cell"></span>
+                            <span class="motion-board-cell"></span>
+                            <span class="motion-board-cell"></span>
+                            <span class="motion-board-cell"></span>
+
+                            <span class="motion-board-cell"></span>
+                            <span class="motion-board-cell"></span>
+                            <span class="motion-board-cell"></span>
+                            <span class="motion-board-cell"></span>
+
+                            <span class="motion-board-cell"></span>
+                            <span class="motion-board-cell"></span>
+                            <span class="motion-board-cell"></span>
+                            <span class="motion-board-cell"></span>
+
+                            <span class="motion-piece motion-piece--ball"></span>
+                            <span class="motion-piece motion-piece--hole"></span>
+                            <span class="motion-piece motion-piece--yellow-bar"></span>
+                            <span class="motion-piece motion-piece--blue-vertical"></span>
+                            <span class="motion-piece motion-piece--yellow-square"></span>
+                        </div>
+                    </div>
+
+                    <div class="deductive-tip motion-tipbox">
+                        <div class="deductive-tip__icon">💡</div>
+                        <div>
+                            <p class="deductive-tip__title">Tip</p>
+                            <p class="deductive-tip__text">Look for the empty path first, then slide the coloured blocks step by step until the red ball can reach the black hole.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="deductive-modal__actions">
+                <div class="actions-left">
+                    <button id="motionBack" type="button" class="deductive-modal__secondary ghost-button">← Back</button>
+                </div>
+                <div class="actions-center">
+                    <button id="motionStart" type="button" class="deductive-modal__primary cta-button">▶ Play</button>
                 </div>
                 <div class="actions-right"></div>
             </div>

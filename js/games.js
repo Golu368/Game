@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const gridModal = document.getElementById('gridModal');
     const gridStart = document.getElementById('gridStart');
     const gridBack = document.getElementById('gridBack');
+    const motionModal = document.getElementById('motionModal');
+    const motionStart = document.getElementById('motionStart');
+    const motionBack = document.getElementById('motionBack');
 
     if (!genericModal || !deductiveModal) return;
 
@@ -44,6 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         genericModal.removeAttribute('hidden');
         genericModal.classList.add('open');
+        // mark body as modal-open so UI (like navbar) can hide during the modal
+        document.body.classList.add('modal-open');
 
         genericPlay.onclick = () => {
             alert('Starting "' + title + '" — placeholder action');
@@ -56,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeGenericModal() {
         genericModal.setAttribute('hidden', '');
         genericModal.classList.remove('open');
+        document.body.classList.remove('modal-open');
     }
 
     function openDeductiveModal() {
@@ -173,6 +179,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    let motionCloseTimer = null;
+    function openMotionModal() {
+        window.clearTimeout(motionCloseTimer);
+        if (!motionModal) return;
+        motionModal.removeAttribute('hidden');
+        motionModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+
+        requestAnimationFrame(() => {
+            motionModal.classList.add('is-open');
+        });
+    }
+
+    function closeMotionModal() {
+        if (!motionModal) return;
+        motionModal.classList.remove('is-open');
+        motionModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+
+        window.clearTimeout(motionCloseTimer);
+        motionCloseTimer = window.setTimeout(() => {
+            if (!motionModal.classList.contains('is-open')) {
+                motionModal.setAttribute('hidden', '');
+            }
+        }, 240);
+    }
+
     function closeDeductiveModal() {
         deductiveModal.classList.remove('is-open');
         deductiveModal.setAttribute('aria-hidden', 'true');
@@ -234,6 +267,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const externalLauncher = window.startDeductiveGame || window.launchDeductiveGame;
         if (typeof externalLauncher === 'function') {
             externalLauncher();
+            // mark the page as game-active so navbar hides during gameplay
+            document.body.classList.add('game-active');
             return;
         }
 
@@ -245,6 +280,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
         );
+
+        // mark the page as game-active so navbar hides during gameplay
+        document.body.classList.add('game-active');
 
         const anchor = document.querySelector('#games');
         if (anchor) {
@@ -258,6 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const externalLauncher = window.startSwitchGame || window.launchSwitchGame;
         if (typeof externalLauncher === 'function') {
             externalLauncher();
+            document.body.classList.add('game-active');
             return;
         }
 
@@ -269,6 +308,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
         );
+
+        document.body.classList.add('game-active');
 
         const anchor = document.querySelector('#games');
         if (anchor) {
@@ -282,6 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const externalLauncher = window.startGridGame || window.launchGridGame;
         if (typeof externalLauncher === 'function') {
             externalLauncher();
+            document.body.classList.add('game-active');
             return;
         }
 
@@ -293,6 +335,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
         );
+
+        document.body.classList.add('game-active');
+
+        const anchor = document.querySelector('#games');
+        if (anchor) {
+            anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    function launchMotionGame() {
+        closeMotionModal();
+
+        const externalLauncher = window.startMotionGame || window.launchMotionGame;
+        if (typeof externalLauncher === 'function') {
+            externalLauncher();
+            document.body.classList.add('game-active');
+            return;
+        }
+
+        window.dispatchEvent(
+            new CustomEvent('motion-challenge:start', {
+                detail: {
+                    title: 'Motion Challenge',
+                    category: 'Imagination'
+                }
+            })
+        );
+
+        document.body.classList.add('game-active');
 
         const anchor = document.querySelector('#games');
         if (anchor) {
@@ -322,6 +393,10 @@ document.addEventListener('DOMContentLoaded', () => {
             openGridModal();
             return;
         }
+        if (gameType === 'motion' || title === 'Motion Challenge') {
+            openMotionModal();
+            return;
+        }
 
         openGenericModal(title, rules, description);
     }
@@ -345,6 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const externalLauncher = window.startInductiveGame || window.launchInductiveGame;
         if (typeof externalLauncher === 'function') {
             externalLauncher();
+            document.body.classList.add('game-active');
             return;
         }
 
@@ -356,6 +432,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
         );
+
+        document.body.classList.add('game-active');
 
         const anchor = document.querySelector('#games');
         if (anchor) {
@@ -376,6 +454,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (switchBack) switchBack.addEventListener('click', closeSwitchModal);
     if (gridStart) gridStart.addEventListener('click', launchGridGame);
     if (gridBack) gridBack.addEventListener('click', closeGridModal);
+    if (motionStart) motionStart.addEventListener('click', launchMotionGame);
+    if (motionBack) motionBack.addEventListener('click', closeMotionModal);
 
     deductiveModal.addEventListener('click', (event) => {
         if (event.target.dataset.close === 'true' || event.target.classList.contains('deductive-modal__close')) {
@@ -401,6 +481,14 @@ document.addEventListener('DOMContentLoaded', () => {
         gridModal.addEventListener('click', (event) => {
             if (event.target.dataset.close === 'true' || event.target.classList.contains('deductive-modal__close')) {
                 closeGridModal();
+            }
+        });
+    }
+
+    if (motionModal) {
+        motionModal.addEventListener('click', (event) => {
+            if (event.target.dataset.close === 'true' || event.target.classList.contains('deductive-modal__close')) {
+                closeMotionModal();
             }
         });
     }

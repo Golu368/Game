@@ -37,7 +37,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1180px;
     margin: 28px auto;
     padding: 28px 36px;
     background: white;
@@ -73,7 +73,7 @@ body {
     z-index: 600;
 }
 .nav-inner {
-    max-width: 1200px;
+    max-width: 1180px;
     margin: 18px auto 0; /* center and sit above the container */
     display: flex;
     align-items: center;
@@ -375,6 +375,16 @@ body.modal-open {
     overflow: hidden;
 }
 
+/* Hide the top navbar while a game modal or fullscreen game is active */
+body.modal-open .nav {
+    display: none !important;
+}
+
+/* Also hide navbar while an actual game view is active */
+body.game-active .nav {
+    display: none !important;
+}
+
 /* Dedicated Deductive Challenge fullscreen modal */
 .deductive-modal {
     position: fixed;
@@ -432,6 +442,206 @@ body.modal-open {
     color: #f8fbff;
     backdrop-filter: blur(18px) saturate(120%);
     transition: box-shadow 220ms ease;
+}
+
+/* If you want the navbar to stay visible, lower the Inductive modal
+   so it doesn't overlap the nav. Uses --nav-offset to match navbar height. */
+.inductive-modal__panel {
+    margin-top: 8px; /* nudge up slightly to match other game modals */
+}
+
+/* Motion Challenge specific styles (scoped to #motionModal) */
+#motionModal .deductive-modal__panel {
+    /* fit within one viewport and keep actions visible */
+    height: calc(100vh - 24px);
+    max-height: calc(100vh - 24px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 18px 12px;
+}
+
+#motionModal .deductive-modal__header h2 {
+    color: #ff8a00; /* orange gradient feel; main heading color */
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+}
+
+#motionModal .deductive-modal__badge {
+    background: #fff;
+    color: #111;
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-top: 6px;
+    font-weight: 700;
+}
+
+#motionModal .deductive-modal__header {
+    margin-bottom: 4px;
+}
+
+#motionModal .deductive-modal__description {
+    max-width: 880px;
+    font-size: 0.96rem;
+    line-height: 1.45;
+    margin-bottom: 6px;
+}
+
+#motionModal .deductive-modal__layout {
+    grid-template-columns: minmax(320px, 340px) minmax(0, 1fr);
+    gap: 12px;
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+#motionModal .deductive-modal__rules-card,
+#motionModal .deductive-modal__examples-card {
+    padding: 12px 12px 10px;
+}
+
+#motionModal .deductive-modal__rules-card h3,
+#motionModal .deductive-modal__examples-card h3 {
+    margin-bottom: 10px;
+}
+
+#motionModal .deductive-modal__group {
+    margin-top: 6px;
+}
+
+#motionModal .deductive-modal__group h4 {
+    margin-bottom: 6px;
+}
+
+#motionModal .deductive-modal__group ul {
+    gap: 6px;
+}
+
+#motionModal .deductive-modal__group li {
+    line-height: 1.28;
+    font-size: 0.9rem;
+}
+
+/* Motion grid: board + overlay pieces */
+.motion-example-wrap { display:flex; justify-content:center; align-items:center; padding: 0; }
+.motion-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    grid-auto-rows: 60px;
+    gap: 0;
+    background: transparent;
+    padding: 0;
+    width: fit-content;
+    margin: 0 auto;
+}
+.motion-board-cell {
+    background: #d8d8d6;
+    border: 1px solid rgba(0,0,0,0.16);
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.26),
+        inset 0 8px 14px rgba(0,0,0,0.03);
+}
+.motion-board-cell--cross {
+    position: relative;
+    background: #f8f8f6;
+}
+.motion-board-cell--cross::before,
+.motion-board-cell--cross::after {
+    content: '';
+    position: absolute;
+    left: 14%;
+    top: 50%;
+    width: 72%;
+    height: 3px;
+    background: rgba(255,255,255,1);
+    transform-origin: center;
+    box-shadow: 0 0 2px rgba(0,0,0,0.28);
+}
+.motion-board-cell--cross::before { transform: translateY(-50%) rotate(45deg); }
+.motion-board-cell--cross::after { transform: translateY(-50%) rotate(-45deg); }
+.motion-piece {
+    position: absolute;
+    z-index: 2;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.motion-piece--ball,
+.motion-piece--hole {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.motion-piece--ball {
+    left: calc(3 * 60px);
+    top: 0;
+    background: #c35e63;
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.18), 0 2px 4px rgba(0,0,0,0.1);
+}
+.motion-piece--hole {
+    left: 60px;
+    top: calc(4 * 60px);
+    background: #1d243a;
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.08), 0 2px 4px rgba(0,0,0,0.12);
+}
+.motion-piece--yellow-bar {
+    left: 0;
+    top: 60px;
+    width: calc(2 * 60px);
+    height: 60px;
+    background: linear-gradient(180deg, rgba(243,205,52,0.86), rgba(226,182,37,0.86));
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.28), 0 2px 4px rgba(0,0,0,0.08);
+}
+.motion-piece--blue-vertical {
+    left: 0;
+    top: calc(2 * 60px);
+    width: 60px;
+    height: calc(2 * 60px);
+    background: linear-gradient(180deg, rgba(55,162,221,0.92), rgba(36,130,213,0.92));
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.22), 0 2px 4px rgba(0,0,0,0.08);
+}
+.motion-piece--yellow-square {
+    left: 60px;
+    top: calc(2 * 60px);
+    width: calc(2 * 60px);
+    height: calc(2 * 60px);
+    background: linear-gradient(180deg, rgba(242,207,66,0.86), rgba(226,183,40,0.86));
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.28), 0 2px 4px rgba(0,0,0,0.08);
+}
+
+/* Actions row for motion modal: keep aligned like other modals */
+#motionModal .deductive-modal__actions {
+    margin-top: 8px;
+    flex: 0 0 auto;
+}
+
+#motionModal .motion-tipbox {
+    margin-top: 10px;
+    padding: 10px 12px;
+}
+
+#motionModal .motion-tipbox .deductive-tip__text {
+    font-size: 0.84rem;
+    line-height: 1.34;
+}
+
+@media (max-width: 720px) {
+    #motionModal .deductive-modal__panel {
+        height: calc(100vh - 16px);
+        max-height: calc(100vh - 16px);
+        padding: 14px 14px 12px;
+    }
+
+    .motion-grid { grid-template-columns: repeat(4, 50px); grid-auto-rows:50px; }
+    .motion-piece--ball,
+    .motion-piece--hole,
+    .motion-piece--yellow-bar,
+    .motion-piece--blue-vertical,
+    .motion-piece--yellow-square {
+        transform: scale(0.76);
+        transform-origin: top left;
+    }
 }
 
 .deductive-modal__close {
@@ -678,6 +888,19 @@ body.modal-open {
 .green { color: #84cc16; }
 .yellow { color: #facc15; }
 .purple { color: #c084fc; }
+
+/* Force shapes in the symbol matrices to use shape-based colors (override per-cell color classes)
+    Mapping: plus = red, circle = green, square = blue, triangle = purple */
+.symbol-matrix .cell.plus { color: var(--danger-color); }
+.symbol-matrix .cell.circle { color: var(--success-color); }
+.symbol-matrix .cell.square { color: var(--primary-color); }
+.symbol-matrix .cell.triangle { color: var(--purple-accent); }
+
+/* For the smaller pattern grids used in other places (pattern-grid) */
+.pattern-grid .shape.plus, .pattern-grid .plus { color: var(--danger-color); }
+.pattern-grid .shape.circle::before, .pattern-grid .circle::before { background: var(--success-color); }
+.pattern-grid .shape.square::before, .pattern-grid .square::before { background: var(--primary-color); }
+.pattern-grid .shape.triangle::before, .pattern-grid .triangle::before { border-bottom-color: var(--purple-accent); }
 
 .square { font-size: 1.45em; }
 .circle { font-size: 1.45em; }
