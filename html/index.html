@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Capgemini Cognitive Games - Fightpur</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- UI LOCK BANNER: soft lock indicator, do not edit UI files without approval -->
+    <!--
+    <div class="ui-lock-banner">UI LOCKED — Do not modify the UI files unless approved</div>
+    -->
+    <!-- Navbar start -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="logo" aria-label="Fightpur home">
+                <span class="logo-mark">fp</span>
+                <span class="logo-text">fightpur</span>
+            </a>
+
+            <button class="menu-btn" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="burger"></span>
+                <span class="burger"></span>
+                <span class="burger"></span>
+            </button>
+
+            <ul class="menu">
+                <li><a href="#games">Games</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="header">
+            <h1>Capgemini Cognitive Ability Games</h1>
+            <p>Do you wanna crack Capgemini Test?  Practice here...!</p>
+        </header>
+
+        <!-- Games section -->
+        <section id="games" class="section">
+            <div class="welcome-box">
+                <h2>Available Games</h2>
+                <p>More games coming soon!</p>
+            </div>
+
+            <div class="games-row">
+                <div class="game-card" role="button" tabindex="0" data-game="deductive" data-title="Deductive Challenge" data-rules="Observe clues|Eliminate wrong options|Pick the best fit">
+                    <img src="../image/Deductive.png" alt="Deductive Challenge" class="game-img">
+                    <p class="game-name">Deductive Challenge</p>
+                </div>
+
+                <div class="game-card" role="button" tabindex="0" data-game="switch" data-title="Switch Challenge" data-rules="Watch symbol order|Track the switch pattern|Choose next sequence" data-description="In this challenge, different symbols are displayed as an input code and output code. You need to understand the relationship between the symbols and determine the correct sequence of the output. Choose the correct code from the answer options based on the given input order. ⚡ How to Play: Time Duration: 20 seconds or 25 seconds per level. Rules: Observe the input symbols carefully; Understand the order transformation between input and output; Find the correct output code; Select the correct answer from the Answer Panel. 🎯 Scoring: +3 points for every correct answer; -1 point for every incorrect answer. Input Code: 🟢 🟥 🔺 ➕ — Answer: 3241 — Output Code: 🔺 🟥 ➕ 🟢">
+                    <img src="../image/Switch.png" alt="Switch Challenge" class="game-img">
+                    <p class="game-name">Switch Challenge</p>
+                </div>
+
+                <div class="game-card" role="button" tabindex="0" data-game="grid" data-title="Grid Challenge" data-rules="Complete the matrix|No repeats per row/col|Use given symbols">
+                    <img src="../image/Grid.png" alt="Grid Challenge" class="game-img">
+                    <p class="game-name">Grid Challenge</p>
+                </div>
+
+                <div class="game-card" role="button" tabindex="0" data-game="inductive" data-title="Inductive Challenge" data-rules="Identify pattern rule|Predict the next|Validate your guess">
+                    <img src="../image/Inductive.png" alt="Inductive Challenge" class="game-img">
+                    <p class="game-name">Inductive Challenge</p>
+                </div>
+
+                <div class="game-card" role="button" tabindex="0" data-game="motion" data-title="Motion Challenge" data-rules="Track moving objects|Predict final position|Select correct outcome">
+                    <img src="../image/Motion.png" alt="Motion Challenge" class="game-img">
+                    <p class="game-name">Motion Challenge</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About section (styled to match provided image) -->
+        <section id="about" class="section">
+            <div class="about-box">
+                <h2 class="about-title">About Us</h2>
+                <p class="about-sub">Welcome to <strong>Fightpur</strong> 💜<br>
+                A smart practice platform built for students preparing for gamified hiring assessments used by top recruiters.</p>
+
+                <!-- Features grid -->
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h4>Logical Thinking</h4>
+                        <p>Solve problems with better logic and accuracy.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h4>Inductive &amp; Deductive Reasoning</h4>
+                        <p>Identify patterns and draw correct conclusions.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h4>Focus &amp; Attention</h4>
+                        <p>Improve concentration and stay focused under pressure.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h4>Reaction Speed</h4>
+                        <p>Respond faster and improve your reflexes.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">🧾</div>
+                        <h4>Memory Accuracy</h4>
+                        <p>Enhance memory and recall information quickly.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">🎮</div>
+                        <h4>Multi-tasking Skills</h4>
+                        <p>Handle multiple tasks efficiently and effectively.</p>
+                    </article>
+                </div>
+
+                <!-- Challenge badges -->
+                <div class="badges-row">
+                    <span class="badge"><span class="badge-icon">▦</span>Grid Challenge</span>
+                    <span class="badge"><span class="badge-icon">▶</span>Motion Challenge</span>
+                    <span class="badge"><span class="badge-icon">◐</span>Switch Challenge</span>
+                    <span class="badge"><span class="badge-icon">#</span>Digit Challenge</span>
+                    <span class="badge"><span class="badge-icon">✳</span>Pattern &amp; Logic</span>
+                </div>
+
+                <!-- Why we built this panel -->
+                <div class="why-panel">
+                    <div class="why-icon">🚀</div>
+                    <div class="why-text">
+                        <h4>Why We Built This</h4>
+                        <p>Many students struggle because these rounds differ from traditional aptitude tests. Questions change quickly, pressure increases, and speed matters as much as accuracy. We built Fightpur so students can practice unlimited unique challenges and improve before the real assessment.</p>
+                    </div>
+                </div>
+
+                <!-- What makes us different -->
+                <h3 class="diff-heading">What Makes Us Different</h3>
+                <div class="diff-grid">
+                    <div class="diff-card">
+                        <div class="diff-ico">🎲</div>
+                        <h5>Randomly Generated</h5>
+                        <p>Every time a new experience.</p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-ico">📊</div>
+                        <h5>Real-time Score &amp; Accuracy</h5>
+                        <p>Track your performance instantly.</p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-ico">🧠</div>
+                        <h5>Brain Training Focused</h5>
+                        <p>Games designed to train your brain.</p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-ico">📈</div>
+                        <h5>Performance Analytics</h5>
+                        <p>Detailed insights to help you improve.</p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-ico">⚙️</div>
+                        <h5>Simple, Fast &amp; Distraction-free</h5>
+                        <p>Clean interface for better practice.</p>
+                    </div>
+                </div>
+
+                <div class="mission-banner">
+                    <p>Our mission is simple: <strong>Help students become faster, sharper, and more confident in modern hiring assessments.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback section -->
+        <section id="feedback" class="section">
+            <div class="welcome-box">
+                <h2>Feedback</h2>
+                <p>Your feedback helps improve the games. Please send your comments below.</p>
+                <form id="feedbackForm" class="feedback-form" novalidate>
+                    <label>Name</label>
+                    <input type="text" name="name" placeholder="Your name" required>
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="you@example.com" required>
+                    <label>Message</label>
+                    <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+                    <div class="feedback-actions">
+                        <button type="submit" class="cta-button">Send</button>
+                        <button type="reset" class="ghost-button">Reset</button>
+                    </div>
+                </form>
+                <p id="feedbackStatus" class="feedback-thanks" aria-live="polite"></p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- External scripts -->
+    <script src="../js/navbar.js" defer></script>
+    <script src="../js/games.js" defer></script>
+    <script src="../js/feedback.js" defer></script>
+
+    <!-- Dedicated Deductive Challenge fullscreen modal -->
+    <div id="deductiveModal" class="deductive-modal" hidden aria-hidden="true">
+        <div class="deductive-modal__backdrop" data-close="true"></div>
+        <div class="deductive-modal__panel" role="dialog" aria-modal="true" aria-labelledby="deductiveModalTitle" aria-describedby="deductiveModalDesc">
+            <button class="deductive-modal__close" type="button" aria-label="Close Deductive Challenge modal" data-close="true">×</button>
+
+            <div class="deductive-modal__header">
+                <h2 id="deductiveModalTitle">Deductive Challenge</h2>
+                <p id="deductiveModalDesc" class="deductive-modal__description">At the beginning of the game, a matrix like 3×3, 4×4, 5×5 etc. is displayed on the screen with different symbols. To complete the matrix, you must select the appropriate symbols from the options given below. Neither a row nor a column should contain similar symbols.</p>
+            </div>
+
+            <div class="deductive-modal__layout">
+                <section class="deductive-modal__rules-card" aria-label="How to play">
+                    <h3>⚡ HOW TO PLAY</h3>
+
+                    <div class="deductive-modal__info-row">
+                        <span class="deductive-modal__info-icon">🕒</span>
+                        <div>
+                            <p class="deductive-modal__label">Time Duration</p>
+                            <p class="deductive-modal__value">4 Minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="deductive-modal__group">
+                        <h4>Rules</h4>
+                        <ul>
+                            <li>No row can contain duplicate symbols.</li>
+                            <li>No column can contain duplicate symbols.</li>
+                            <li>Fill ? cells using the given options.</li>
+                            <li>Think carefully before selecting.</li>
+                        </ul>
+                    </div>
+
+                    <div class="deductive-modal__group">
+                        <h4>Scoring</h4>
+                        <ul>
+                            <li><strong>+3 point</strong> for every correct answer.</li>
+                            <li><strong>-1 point</strong> for every incorrect answer.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="deductive-modal__examples-card" aria-label="Example matrices">
+                    <h3>▦ EXAMPLE MATRICES</h3>
+
+                    <div class="deductive-modal__matrix-row">
+                        <article class="deductive-example">
+                            <h4>3 × 3 MATRIX</h4>
+                            <div class="symbol-matrix symbol-matrix--3" aria-hidden="true">
+                                <span class="cell blue plus">+</span>
+                                <span class="cell red square">■</span>
+                                <span class="cell green circle">●</span>
+                                <span class="cell green circle">●</span>
+                                <span class="cell blue plus">+</span>
+                               
+                                <span class="cell red square">■</span>
+                                <span class="cell blank">?</span>
+                                <span class="cell green circle">●</span>
+                            </div>
+                            <p class="deductive-example__options-label">Options:</p>
+                            <div class="deductive-options">
+                                <span class="option blue plus">+</span>
+                                <span class="option red square">■</span>
+                                <span class="option green circle">●</span>
+                            </div>
+                        </article>
+
+                        <article class="deductive-example">
+                            <h4>4 × 4 MATRIX</h4>
+                            <div class="symbol-matrix symbol-matrix--4" aria-hidden="true">
+                                <span class="cell blue plus">+</span>
+                                <span class="cell red square">■</span>
+                                <span class="cell green circle">●</span>
+                                <span class="cell yellow star">★</span>
+                                <span class="cell green circle">●</span>
+                                <span class="cell yellow star">★</span>
+                                <span class="cell blue plus">+</span>
+                                <!-- removed ? at 4x4 row 2, col 4 -->
+                                <span class="cell blank"></span>
+                                <span class="cell red square">■</span>
+                                <span class="cell blue plus">+</span>
+                                <!-- removed ? at 4x4 row 3, col 3 -->
+                                <span class="cell blank"></span>
+                                <span class="cell green circle">●</span>
+                                <span class="cell yellow star">★</span>
+                                <span class="cell blank">?</span>
+                                <span class="cell red square">■</span>
+                                <span class="cell blue plus">+</span>
+                            </div>
+                            <p class="deductive-example__options-label">Options:</p>
+                            <div class="deductive-options">
+                                <span class="option blue plus">+</span>
+                                <span class="option red square">■</span>
+                                <span class="option green circle">●</span>
+                                <span class="option yellow star">★</span>
+                            </div>
+                        </article>
+
+                        <article class="deductive-example">
+                            <h4>5 × 5 MATRIX</h4>
+                            <div class="symbol-matrix symbol-matrix--5" aria-hidden="true">
+                                <span class="cell blue plus">+</span>
+                                <span class="cell red square">■</span>
+                                <span class="cell green circle">●</span>
+                                <span class="cell yellow star">★</span>
+                                <span class="cell purple triangle">▲</span>
+                                <span class="cell yellow star">★</span>
+                                <span class="cell green circle">●</span>
+                                <span class="cell purple triangle">▲</span>
+                                <span class="cell blank">?</span>
+                                <span class="cell blank"></span>
+                                <span class="cell red square">■</span>
+                                <span class="cell blue plus">+</span>
+                                <span class="cell yellow star">★</span>
+                                <span class="cell blank"></span>
+                                <span class="cell green circle">●</span>
+                                <span class="cell green circle">●</span>
+                                <span class="cell purple triangle">▲</span>
+                                <span class="cell red square">■</span>
+                                <span class="cell blue plus">+</span>
+                                <span class="cell blank"></span>
+                                <span class="cell blank"></span>
+                                <span class="cell blank"></span>
+                                <span class="cell blue plus">+</span>
+                                <span class="cell green circle">●</span>
+                                <span class="cell red square">■</span>
+                                <span class="cell blank"></span>
+                            </div>
+                            <p class="deductive-example__options-label">Options:</p>
+                            <div class="deductive-options">
+                                <span class="option blue plus">+</span>
+                                <span class="option red square">■</span>
+                                <span class="option green circle">●</span>
+                                <span class="option yellow star">★</span>
+                                <span class="option purple triangle">▲</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="deductive-tip">
+                        <div class="deductive-tip__icon">💡</div>
+                        <div>
+                            <p class="deductive-tip__title">Tip</p>
+                            <p class="deductive-tip__text">Each symbol is unique in every row and column. Use logic and eliminate options to find the correct symbol for this place (?).</p>
+                        </div>
+                        
+                    </div>
+                </section>
+            </div>
+
+            <div class="deductive-modal__actions">
+                <div class="actions-left">
+                    <button id="deductiveBack" type="button" class="deductive-modal__secondary ghost-button">← Back</button>
+                </div>
+                <div class="actions-center">
+                    <button id="deductiveStartGame" type="button" class="deductive-modal__primary cta-button">▶ Play</button>
+                </div>
+                <div class="actions-right"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Switch Challenge fullscreen modal (matches Deductive layout) -->
+    <div id="switchModal" class="deductive-modal" hidden aria-hidden="true">
+        <div class="deductive-modal__backdrop" data-close="true"></div>
+        <div class="deductive-modal__panel" role="dialog" aria-modal="true" aria-labelledby="switchModalTitle" aria-describedby="switchModalDesc">
+            <button class="deductive-modal__close" type="button" aria-label="Close Switch Challenge modal" data-close="true">×</button>
+
+            <div class="deductive-modal__header">
+                <h2 id="switchModalTitle">Switch Challenge</h2>
+                <p id="switchModalDesc" class="deductive-modal__description">In this challenge, different symbols are displayed as an input code and output code. You need to understand the relationship between the symbols and determine the correct sequence of the output. Choose the correct code from the answer options based on the given input order.</p>
+            </div>
+
+            <div class="deductive-modal__layout">
+                <section class="deductive-modal__rules-card" aria-label="How to play">
+                    <h3>⚡ HOW TO PLAY</h3>
+
+                    <div class="deductive-modal__info-row">
+                        <span class="deductive-modal__info-icon">🕒</span>
+                        <div>
+                            <p class="deductive-modal__label">Time Duration</p>
+                            <p class="deductive-modal__value">4 Minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="deductive-modal__group">
+                        <h4>Rules</h4>
+                        <ul>
+                            <li>Observe the input symbols carefully.</li>
+                            <li>Understand the order transformation between input and output.</li>
+                            <li>Find the correct output code.</li>
+                            <li>Select the correct answer from the Answer Panel.</li>
+                        </ul>
+                    </div>
+
+                    <div class="deductive-modal__group">
+                        <h4>Scoring</h4>
+                        <ul>
+                            <li><strong>+3 points</strong> for every correct answer.</li>
+                            <li><strong>-1 point</strong> for every incorrect answer.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="deductive-modal__examples-card" aria-label="Example">
+                    <h3>▦ EXAMPLE</h3>
+
+                    <div class="deductive-modal__matrix-row" style="align-items:flex-start;">
+                        <div class="switch-example" style="flex:1;text-align:left;padding:6px 0;">
+                            <div class="switch-input">
+                                <h4>Input Code</h4>
+                                <div class="switch-icons" aria-hidden="true">
+                                    <div class="switch-icon-wrap"><span class="switch-icon">🟢</span><div class="switch-num">1</div></div>
+                                    <div class="switch-icon-wrap"><span class="switch-icon">🟥</span><div class="switch-num">2</div></div>
+                                    <div class="switch-icon-wrap"><span class="switch-icon switch-triangle">🔺</span><div class="switch-num">3</div></div>
+                                    <div class="switch-icon-wrap"><span class="switch-icon">➕</span><div class="switch-num">4</div></div>
+                                </div>
+                                <div class="switch-nums" aria-hidden="true"></div>
+                            </div>
+
+                            <div class="switch-answer">Answer : <span class="switch-answer-code">3 2 4 1</span></div>
+
+                            <div class="switch-output">
+                                <h4>Output Code</h4>
+                                <div class="switch-icons" aria-hidden="true">
+                                    <div class="switch-icon-wrap"><span class="switch-icon switch-triangle">🔺</span></div>
+                                    <div class="switch-icon-wrap"><span class="switch-icon">🟥</span></div>
+                                    <div class="switch-icon-wrap"><span class="switch-icon">➕</span></div>
+                                    <div class="switch-icon-wrap"><span class="switch-icon">🟢</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <aside class="switch-options" aria-label="Answer options">
+                            <h4 class="switch-options-title">Options</h4>
+                            <button class="switch-option" data-value="A"><strong>A.</strong>&nbsp;&nbsp;<span class="opt-seq">3 4 2 1</span></button>
+                            <button class="switch-option" data-value="B"><strong>B.</strong>&nbsp;&nbsp;<span class="opt-seq">4 2 1 3</span></button>
+                            <button class="switch-option correct" data-value="C"><strong>C.</strong>&nbsp;&nbsp;<span class="opt-seq">3 2 4 1</span></button>
+                            <button class="switch-option" data-value="D"><strong>D.</strong>&nbsp;&nbsp;<span class="opt-seq">1 4 3 2</span></button>
+                        </aside>
+                    </div>
+
+                    <div class="deductive-tip">
+                        <div class="deductive-tip__icon">💡</div>
+                        <div>
+                            <p class="deductive-tip__title">Tip</p>
+                            <p class="deductive-tip__text">Understand the mapping between input positions and output positions; map indices and eliminate impossible choices.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="deductive-modal__actions">
+                <div class="actions-left">
+                    <button id="switchBack" type="button" class="deductive-modal__secondary ghost-button">← Back</button>
+                </div>
+                <div class="actions-center">
+                    <button id="switchStartGame" type="button" class="deductive-modal__primary cta-button">▶ Play</button>
+                </div>
+                <div class="actions-right"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Inductive Challenge fullscreen modal -->
+    <div id="inductiveModal" class="deductive-modal inductive-modal" hidden aria-hidden="true">
+        <div class="deductive-modal__backdrop" data-close="true"></div>
+        <div class="deductive-modal__panel inductive-modal__panel" role="dialog" aria-modal="true" aria-labelledby="inductiveModalTitle" aria-describedby="inductiveModalDesc">
+            <button class="deductive-modal__close" type="button" aria-label="Close Inductive Challenge modal" data-close="true">×</button>
+
+            <div class="inductive-modal__header">
+                <h2 id="inductiveModalTitle">Inductive Challenge</h2>
+                <div class="inductive-modal__badge">Recognition</div>
+                <p id="inductiveModalDesc" class="inductive-modal__description">In this challenge, two grids with different shapes are shown. The second grid contains a small change from the first grid. Your task is to identify the rule followed between these two grids. After understanding the pattern change, select the two grids from the given options that follow the same rule.</p>
+            </div>
+
+            <div class="deductive-modal__layout inductive-modal__layout">
+                <section class="deductive-modal__rules-card" aria-label="How to play">
+                    <h3>🎮 HOW TO PLAY</h3>
+
+                    <div class="deductive-modal__info-row">
+                        <span class="deductive-modal__info-icon">⏱</span>
+                        <div>
+                            <p class="deductive-modal__label">Time Duration</p>
+                            <p class="deductive-modal__value">30 seconds per level</p>
+                        </div>
+                    </div>
+
+                    <div class="deductive-modal__group">
+                        <h4>🧠 Rules</h4>
+                        <ul>
+                            <li>Observe the first two example grids.</li>
+                            <li>Identify how the shapes changed.</li>
+                            <li>Find the hidden transformation rule.</li>
+                            <li>Compare the answer grids.</li>
+                            <li>Select the two grids following the same rule.</li>
+                        </ul>
+                    </div>
+
+                    <div class="deductive-modal__group">
+                        <h4>🎯 Scoring</h4>
+                        <ul>
+                            <li><strong>+3 points</strong> for every correct answer.</li>
+                            <li><strong>-1 point</strong> for every incorrect answer.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="deductive-modal__examples-card" aria-label="Example task">
+                    <h3>▦ Example Task</h3>
+
+                    <div class="inductive-content-row">
+                        <article class="inductive-rule-card">
+                            <p class="inductive-section-title">These two grids follow a rule.</p>
+                            <div class="inductive-stack" aria-hidden="true">
+                                <div class="inductive-stack-box">
+                                    <div class="pattern-grid-3x3">
+                                        <div class="shape plus"></div>
+                                        <div class="shape square"></div>
+                                        <div class="shape square"></div>
+                                        <div class="shape circle"></div>
+                                        <div class="shape circle"></div>
+                                        <div class="shape plus"></div>
+                                        <div class="shape triangle"></div>
+                                        <div class="shape triangle"></div>
+                                        <div class="shape triangle"></div>
+                                    </div>
+                                </div>
+                                <div class="inductive-stack-box">
+                                    <div class="pattern-grid-3x3">
+                                        <div class="shape circle"></div>
+                                        <div class="shape plus"></div>
+                                        <div class="shape plus"></div>
+                                        <div class="shape triangle"></div>
+                                        <div class="shape triangle"></div>
+                                        <div class="shape circle"></div>
+                                        <div class="shape square"></div>
+                                        <div class="shape square"></div>
+                                        <div class="shape square"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="inductive-answer-card">
+                            <p class="inductive-section-title">Which two of these grids follow the same rule?</p>
+                            <div class="inductive-options-grid">
+                                <button class="inductive-option-card" type="button" aria-label="Option A">
+                                    <span class="inductive-option-label">A</span>
+                                    <div class="pattern-grid-3x3 pattern-grid-3x3--small">
+                                        <div class="shape triangle"></div>
+                                        <div class="shape square"></div>
+                                        <div class="shape square"></div>
+                                        <div class="shape plus"></div>
+                                        <div class="shape triangle"></div>
+                                        <div class="shape plus"></div>
+                                        <div class="shape square"></div>
+                                        <div class="shape circle"></div>
+                                        <div class="shape square"></div>
+                                    </div>
+                                </button>
+
+                                <button class="inductive-option-card" type="button" aria-label="Option B">
+                                    <span class="inductive-option-label">B</span>
+                                    <div class="pattern-grid-3x3 pattern-grid-3x3--small">
+                                        <div class="shape plus"></div>
+                                        <div class="shape square"></div>
+                                        <div class="shape plus"></div>
+                                        <div class="shape circle"></div>
+                                        <div class="shape triangle"></div>
+                                        <div class="shape circle"></div>
+                                        <div class="shape square"></div>
+                                        <div class="shape square"></div>
+                                        <div class="shape square"></div>
+                                    </div>
+                                </button>
+
+                                <button class="inductive-option-card" type="button" aria-label="Option C">
+                                    <span class="inductive-option-label">C</span>
+                                    <div class="pattern-grid-3x3 pattern-grid-3x3--small">
+                                        <div class="shape circle"></div>
+                                        <div class="shape plus"></div>
+                                        <div class="shape circle"></div>
+                                        <div class="shape plus"></div>
+                                        <div class="shape triangle"></div>
+                                        <div class="shape plus"></div>
+                                        <div class="shape circle"></div>
+                                        <div class="shape square"></div>
+                                        <div class="shape square"></div>
+                                    </div>
+                                </button>
+
+                                <button class="inductive-option-card" type="button" aria-label="Option D">
+                                    <span class="inductive-option-label">D</span>
+                                    <div class="pattern-grid-3x3 pattern-grid-3x3--small">
+                                        <div class="shape triangle"></div>
+                                        <div class="shape square"></div>
+                                        <div class="shape triangle"></div>
+                                        <div class="shape square"></div>
+                                        <div class="shape triangle"></div>
+                                        <div class="shape circle"></div>
+                                        <div class="shape plus"></div>
+                                        <div class="shape plus"></div>
+                                        <div class="shape plus"></div>
+                                    </div>
+                                </button>
+                            </div>
+
+                            <div class="inductive-tipbox">
+                                <div class="inductive-tipbox__label">Tip</div>
+                                <p>Look for shape movement, position changes, row and column patterns, and shape replacement rules. Find the relationship first, then choose matching grids.</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <div class="inductive-modal__actions">
+                <div class="actions-left">
+                    <button id="inductiveBack" type="button" class="deductive-modal__secondary ghost-button">← Back</button>
+                </div>
+                <div class="actions-center">
+                    <button id="inductiveStart" type="button" class="deductive-modal__primary cta-button">▶ Play</button>
+                </div>
+                <div class="actions-right"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game launcher modal (shows rules + Play/Cancel) -->
+    <div id="gameModal" class="modal" hidden>
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" type="button" aria-label="Close" data-close="true">×</button>
+            <h3 id="modalTitle">Game Title</h3>
+                <p id="modalDesc" class="modal-desc" aria-hidden="true"></p>
+            <ul id="modalRules" class="modal-rules"></ul>
+            <div class="modal-actions">
+                <button id="modalPlay" class="cta-button">Play</button>
+                <button id="modalCancel" class="ghost-button">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Grid Challenge fullscreen modal (Instruction modal matching Deductive design) -->
+    <div id="gridModal" class="deductive-modal" hidden aria-hidden="true">
+        <div class="deductive-modal__backdrop" data-close="true"></div>
+        <div class="deductive-modal__panel" role="dialog" aria-modal="true" aria-labelledby="gridModalTitle" aria-describedby="gridModalDesc">
+            <button class="deductive-modal__close" type="button" aria-label="Close Grid Challenge modal" data-close="true">×</button>
+
+            <div class="deductive-modal__header">
+                <h2 id="gridModalTitle">Grid Challenge</h2>
+                <div class="deductive-modal__badge">Power of Attention, Memory</div>
+                <p id="gridModalDesc" class="deductive-modal__description">At the beginning of the game, multiple circles appear randomly on the screen. One circle will blink for a short time and you must remember its position. After that, two grid patterns will be displayed and you need to decide whether both patterns are identical after rotation or not. After completing the pattern task, select the remembered circles in the correct order.</p>
+            </div>
+
+            <div class="deductive-modal__layout">
+                <!-- LEFT: How To Play card -->
+                <section class="deductive-modal__rules-card" aria-label="How to play">
+                    <h3>🎮 How To Play</h3>
+
+                    <div class="deductive-modal__info-row">
+                        <span class="deductive-modal__info-icon">⏱</span>
+                        <div>
+                            <p class="deductive-modal__label">Time Duration</p>
+                            <p class="deductive-modal__value">4 Minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="deductive-modal__group">
+                        <h4>🧠 Memory Phase</h4>
+                        <ul>
+                            <li>Observe the highlighted circle carefully.</li>
+                            <li>Remember the blinking dot position.</li>
+                            <li>Multiple positions need to be remembered in sequence.</li>
+                        </ul>
+                    </div>
+
+                    <div class="deductive-modal__group">
+                        <h4>🔳 Pattern Phase</h4>
+                        <ul>
+                            <li>Compare two grid patterns.</li>
+                            <li>Check whether they are identical after rotation.</li>
+                            <li>Select <strong>YES</strong> or <strong>NO</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="deductive-modal__group">
+                        <h4>🎯 Scoring</h4>
+                        <ul>
+                            <li><strong>+3 points</strong> for every correct answer.</li>
+                            <li><strong>-1 point</strong> for every incorrect answer.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- RIGHT: Examples card -->
+                <section class="deductive-modal__examples-card" aria-label="Example tasks">
+                    <h3>▦ EXAMPLE TASKS</h3>
+
+                    <div class="grid-examples">
+                        <!-- Example 1: Memory Challenge -->
+                        <div class="example-block memory-block">
+                            <h4>Memory Challenge</h4>
+                            <div class="memory-area" aria-hidden="true">
+                                <div class="memory-playground" data-sequence="5"></div>
+                            </div>
+                            <p class="example-caption">Remember highlighted dot sequence</p>
+                        </div>
+
+                        <!-- Example 2: Pattern Comparison -->
+                        <div class="example-block pattern-block">
+                            <h4>Pattern Comparison (symmetry)</h4>
+                            <div class="pattern-row">
+                                <div class="pattern-grid" aria-hidden="true">
+                                    <!-- left 5x5 pattern (squares and dots) -->
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell square"></div>
+
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell dot"></div>
+
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell square"></div>
+
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell dot"></div>
+
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell square"></div>
+                                </div>
+
+                                <div class="pattern-grid" aria-hidden="true">
+                                    <!-- right 5x5 pattern -->
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell square"></div>
+
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell dot"></div>
+
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell square"></div>
+
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell dot"></div>
+
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell dot"></div>
+                                    <div class="pattern-cell square"></div>
+                                    <div class="pattern-cell square"></div>
+                                </div>
+                            </div>
+
+                            <p class="example-caption">Rotated but identical?</p>
+                            <div class="grid-yesno">
+                                <button class="switch-option">YES</button>
+                                <button class="switch-option">NO</button>
+                            </div>
+                        </div>
+
+                        <!-- Tip spanning full width under both examples -->
+                        <div class="deductive-tip">
+                            <div class="deductive-tip__icon">💡</div>
+                            <div>
+                                <p class="deductive-tip__title">Tip</p>
+                                <p class="deductive-tip__text">Use rotation symmetry to compare patterns quickly and remember highlighted positions using a mental grid.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="deductive-modal__actions">
+                <div class="actions-left">
+                    <button id="gridBack" type="button" class="deductive-modal__secondary ghost-button">← Back</button>
+                </div>
+                <div class="actions-center">
+                    <button id="gridStart" type="button" class="deductive-modal__primary cta-button">▶ Play</button>
+                </div>
+                <div class="actions-right"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

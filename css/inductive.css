@@ -1,0 +1,465 @@
+/* Inductive Challenge styles isolated from the main stylesheet */
+
+/* Inductive modal: use same Deductive/Switch/Grid dark glass theme and orange accents */
+#inductiveModal .deductive-modal__panel {
+    position: relative;
+    width: min(100%, 1220px);
+    max-height: calc(100vh - 28px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+    padding: 26px 22px 22px;
+    border-radius: 24px;
+    border: 1px solid rgba(124,58,237,0.36);
+    background: linear-gradient(180deg, rgba(8,10,22,0.92), rgba(11,14,30,0.96));
+    box-shadow: 0 24px 70px rgba(11,20,40,0.6);
+    color: #f8fbff;
+    backdrop-filter: blur(18px) saturate(120%);
+    transition: box-shadow 220ms ease;
+}
+
+#inductiveModal .deductive-modal__layout {
+    grid-template-columns: 360px 1fr;
+    gap: 18px;
+    align-items: stretch;
+}
+
+.inductive-modal .inductive-modal__header {
+    text-align: center;
+}
+
+.inductive-modal .inductive-modal__header h2 {
+    margin-top: 8px;
+    font-size: clamp(1.6rem, 3.8vw, 2.6rem);
+    font-weight: 800;
+    color: var(--action-color);
+    letter-spacing: 0.02em;
+}
+
+.inductive-modal .inductive-modal__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    background: #ffffff;
+    color: #111;
+    border-radius: 999px;
+    font-weight: 700;
+    box-shadow: 0 8px 26px rgba(11,20,40,0.12);
+}
+
+.inductive-modal .inductive-modal__description {
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px;
+    color: rgba(233, 240, 255, 0.9);
+    font-size: 1.06rem;
+    line-height: 1.7;
+}
+
+.inductive-modal .inductive-modal__layout .deductive-modal__rules-card,
+.inductive-modal .inductive-modal__layout .deductive-modal__examples-card {
+    border-color: rgba(255,255,255,0.08);
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+}
+
+.inductive-modal .inductive-modal__layout .deductive-modal__rules-card h3,
+.inductive-modal .inductive-modal__layout .deductive-modal__examples-card h3 {
+    background: var(--action-color);
+    color: #111;
+}
+
+.inductive-modal .inductive-modal__layout .deductive-modal__group h4,
+.inductive-modal .inductive-section-title,
+.inductive-modal .inductive-modal__header,
+.inductive-modal .inductive-modal__description {
+    color: rgba(255,255,255,0.96);
+}
+
+.inductive-modal .inductive-modal__layout .deductive-modal__group li {
+    color: rgba(255,255,255,0.92);
+}
+
+.inductive-modal .inductive-modal__layout .deductive-modal__info-icon {
+    color: var(--action-color);
+    background: rgba(255,152,0,0.10);
+    border-color: rgba(255,152,0,0.22);
+}
+
+.inductive-modal .inductive-modal__layout .deductive-modal__badge {
+    background: #fff;
+    color: #111;
+}
+
+.inductive-modal .inductive-modal__examples-card {
+    padding: 14px 14px 12px;
+}
+
+.inductive-modal .inductive-modal__examples-card h3 {
+    margin-bottom: 12px;
+}
+
+.inductive-wireframe {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 1fr);
+    gap: 20px;
+    align-items: stretch;
+}
+
+.inductive-wireframe__left,
+.inductive-wireframe__top-row > div,
+.inductive-wireframe__option,
+.inductive-wireframe__tips {
+    border: 1.5px solid rgba(37,99,235,0.16);
+    border-radius: 20px;
+    background: transparent;
+    box-shadow: inset 0 0 0 1px rgba(37,99,235,0.06);
+}
+
+.inductive-wireframe__left {
+    min-height: 410px;
+}
+
+.inductive-wireframe__right {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 18px;
+}
+
+.inductive-wireframe__top-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+    padding: 0 8px;
+}
+
+.inductive-wireframe__mini {
+    height: 140px;
+}
+
+.inductive-wireframe__options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 34px;
+    align-items: center;
+    justify-items: center;
+    padding: 0 10px;
+}
+
+.inductive-wireframe__option {
+    position: relative;
+    width: 132px;
+    height: 118px;
+}
+
+.inductive-wireframe__option span {
+    position: absolute;
+    right: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.inductive-wireframe__tips {
+    min-height: 92px;
+    padding: 16px 18px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.95rem;
+}
+
+.inductive-content-row {
+    display: flex;
+    gap: 14px;
+    align-items: stretch;
+}
+
+.inductive-rule-card,
+.inductive-answer-card {
+    flex: 1;
+    min-width: 0;
+    border-radius: 18px;
+    border: 1px solid rgba(124,58,237,0.18);
+    background: linear-gradient(180deg, rgba(10,10,22,0.92), rgba(11,12,31,0.9));
+    padding: 14px;
+}
+
+.inductive-section-title {
+    color: var(--action-color);
+    font-size: 1.02rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.inductive-stack {
+    display: grid;
+    gap: 14px;
+}
+
+.inductive-stack-box {
+    background: #fff;
+    border: 2px solid rgba(11,20,40,0.08);
+    border-radius: 12px;
+    padding: 6px;
+}
+
+.inductive-modal .pattern-grid-3x3 {
+    width: 140px;
+    height: 140px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0;
+    padding: 0;
+    background: #fff;
+    border: 2px solid #333;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.inductive-modal .pattern-grid-3x3--small { width: 120px; height: 120px; }
+
+.inductive-modal .shape {
+    display: grid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.inductive-modal .shape.circle::before {
+    content: '';
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    background: var(--purple-accent);
+}
+
+.inductive-modal .shape.square::before {
+    content: '';
+    width: 40%;
+    height: 40%;
+    background: var(--primary-color);
+}
+
+.inductive-modal .shape.triangle::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 22px solid var(--primary-color);
+    margin: auto;
+}
+
+.inductive-modal .shape.plus::before {
+    content: '+';
+    color: var(--action-color);
+    font-size: 1.4rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.inductive-modal .pattern-grid-3x3 .shape { padding: 6px; }
+
+.inductive-modal .pattern-grid-3x3 .shape {
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+
+.inductive-modal .pattern-grid-3x3--small { width: 120px; height: 120px; }
+
+.inductive-modal .pattern-grid-3x3 .shape::before { display: block; margin: auto; }
+
+.inductive-modal .inductive-option-card {
+    background: linear-gradient(180deg,#060717,#0b0f1a);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 18px 40px rgba(6,8,18,0.6);
+}
+
+.inductive-modal .inductive-option-card .pattern-grid-3x3 {
+    margin: 0;
+}
+
+.inductive-modal .inductive-options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.inductive-modal .inductive-option-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: linear-gradient(180deg,#060717,#0b0f1a);
+    padding: 10px;
+    box-shadow: 0 18px 40px rgba(6,8,18,0.6);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.inductive-modal .inductive-option-card:hover,
+.inductive-modal .inductive-option-card:focus-visible,
+.inductive-modal .inductive-option-card.is-selected {
+    border-color: var(--action-color);
+    box-shadow: 0 0 0 1px rgba(255,152,0,0.18), 0 0 18px rgba(255,152,0,0.28);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.inductive-modal .inductive-option-label {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+    color: #fff;
+    font-weight: 900;
+    font-size: 0.95rem;
+}
+
+.inductive-modal .inductive-grid--option {
+    width: 155px;
+    height: 155px;
+}
+
+.inductive-modal .inductive-tipbox {
+    margin-top: 12px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    background: rgba(255,255,255,0.035);
+    padding: 12px 14px;
+    color: rgba(255,255,255,0.92);
+}
+
+.inductive-modal .inductive-tipbox__label {
+    color: var(--action-color);
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.inductive-modal .inductive-tipbox p {
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+.inductive-modal .inductive-modal__actions {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.inductive-modal #inductiveModal .deductive-modal__primary {
+    background: var(--action-color);
+    color: #fff;
+    box-shadow: 0 0 25px rgba(255,152,0,0.36);
+}
+
+@media (max-width: 1100px) {
+    #inductiveModal .deductive-modal__layout,
+    .inductive-modal .inductive-content-row,
+    .inductive-modal .inductive-options-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    #inductiveModal .inductive-modal__panel {
+        max-height: calc(100vh - 20px);
+    }
+
+    .inductive-modal .inductive-modal__actions {
+        gap: 10px;
+    }
+
+    .inductive-modal .inductive-modal__actions {
+        gap: 10px;
+    }
+
+    .inductive-modal .pattern-grid-3x3 {
+        width: 150px;
+        height: 150px;
+    }
+
+    .inductive-modal .pattern-grid-3x3--small,
+    .inductive-modal .inductive-grid--option {
+        width: 138px;
+        height: 138px;
+    }
+
+    .inductive-modal .inductive-options-grid {
+        gap: 10px;
+    }
+
+    .inductive-modal .inductive-option-card {
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 1180px) {
+    #gridModal .deductive-modal__layout { grid-template-columns: 1fr; }
+    .grid-examples { order: 2; }
+}
+
+@media (max-width: 720px) {
+    .deductive-modal {
+        padding: 10px;
+    }
+
+    .deductive-modal__panel {
+        max-height: calc(100vh - 20px);
+        padding: 18px 14px 14px;
+        border-radius: 18px;
+    }
+
+    .deductive-modal__close {
+        top: 14px;
+        right: 14px;
+    }
+
+    .deductive-modal__header {
+        padding: 6px 42px 14px;
+    }
+
+    .deductive-modal__actions {
+        gap: 12px;
+    }
+
+    .deductive-modal__primary,
+    .deductive-modal__secondary {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* Isolation container for Inductive modal - default hidden and fully isolated */
+.inductive-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    background: #080b18;
+    display: none;
+}
+
+.inductive-modal.is-open,
+.inductive-modal[aria-hidden="false"],
+.inductive-modal.open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
